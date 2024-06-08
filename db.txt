@@ -1,0 +1,131 @@
+CREATE TABLE [dbo].[INVEST] (
+    [SERIAL]    INT            NOT NULL,
+    [DFILE]     DATE           NOT NULL,
+    [DMAHDAR]   DATE           NOT NULL,
+    [CRIME]     NVARCHAR (50)  NULL,
+    [MADBOUT]   NVARCHAR (1)   NULL,
+    [RESUME]    NVARCHAR (1)   NULL,
+    [REM]       TEXT           NULL,
+    PRIMARY KEY CLUSTERED ([SERIAL] ASC)
+);
+
+CREATE TABLE [dbo].[ImageFP] (
+    [SERIAL]  INT   NOT NULL,
+    [SERPERS] INT   NOT NULL,
+    [fpright] IMAGE NULL,
+    [fpleft]  IMAGE NULL,
+    PRIMARY KEY CLUSTERED ([SERIAL] ASC, [SERPERS] ASC)
+);
+
+
+
+CREATE TABLE [dbo].[invpersons] (
+    [SERIAL]     INT           NOT NULL,
+    [SERPERS]    INT           NOT NULL,
+    [FNAME]      NVARCHAR (50) NULL,
+    [LNAME]      NVARCHAR (50) NULL,
+    [FATHER]     NVARCHAR (50) NULL,
+    [MOTHER]     NVARCHAR (50) NULL,
+    [NATION]     INT           NULL,
+    [REG]        NVARCHAR (60) NULL,
+    [PBIRTH]     NVARCHAR (50) NULL,
+    [DBIRTH]     INT           NULL,
+    [RESID]      NVARCHAR (60) NULL,
+    [ADRS]       NVARCHAR (50) NULL,
+    [ATTR]       INT           NULL,
+    [EXST]       INT           NULL,
+    [ARCH]       INT           NULL,
+    [Nickname]   NVARCHAR (50) NULL,
+    [Occupation] NVARCHAR (50) NULL,
+    [Idnum]      NVARCHAR (50) NULL,
+    [Mobileno]   NVARCHAR (50) NULL,
+    [Status]     NVARCHAR (50) NULL,
+    [Gender]     NVARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([SERIAL] ASC, [SERPERS] ASC)
+);
+
+
+CREATE TABLE [dbo].[vehicles] (
+    [vid]            INT            NOT NULL,
+    [serialNB]       INT            NULL,
+    [ActualNB]       NVARCHAR (255) NULL,
+    [CodeDESC]       NVARCHAR (255) NULL,
+    [PRODDATE]       NVARCHAR (255) NULL,
+    [Chassis]        NVARCHAR (255) NULL,
+    [Motor]          NVARCHAR (255) NULL,
+    [dateaquisition] NVARCHAR (255) NULL,
+    [PreMiseCirc]    NVARCHAR (255) NULL,
+    [ColorDesc]      NVARCHAR (255) NULL,
+    [Brand]          NVARCHAR (255) NULL,
+    [Model]          NVARCHAR (255) NULL,
+    [UtilisDesc]     NVARCHAR (255) NULL,
+    [name]           NVARCHAR (255) NULL,
+    [lastname]       NVARCHAR (255) NULL,
+    [NoRegProp]      NVARCHAR (255) NULL,
+    [Address]        NVARCHAR (255) NULL,
+    [CityID]         NVARCHAR (255) NULL,
+    [DistrictID]     NVARCHAR (255) NULL,
+    [GovernateID]    NVARCHAR (255) NULL,
+    [MotherName]     NVARCHAR (255) NULL,
+    [TelProp]        NVARCHAR (255) NULL,
+    [AgeProp]        NVARCHAR (255) NULL,
+    [BirthPlace]     NVARCHAR (255) NULL,
+    [HORSSERVICE]    INT            NULL,
+    PRIMARY KEY CLUSTERED ([vid] ASC)
+);
+
+
+CREATE TABLE [dbo].[Village] (
+    [CODE]  INT         NOT NULL,
+    [LABEL] NCHAR (200) NULL,
+    [STAT]  INT         NULL,
+    PRIMARY KEY CLUSTERED ([CODE] ASC)
+);
+
+CREATE TABLE [dbo].[worldkey] (
+    [CODE]     INT            NOT NULL,
+    [LABEL]    NVARCHAR (100) NOT NULL,
+    [LINKCODE] INT            NULL,
+    [OFFICE]   INT            NULL,
+    PRIMARY KEY CLUSTERED ([CODE] ASC)
+);
+
+CREATE TABLE [dbo].[nations] (
+    [CODE]   INT            NOT NULL,
+    [ALABEL] NVARCHAR (100) NOT NULL,
+    [LLABEL] NVARCHAR (50)  NULL,
+    [FNAME]  NVARCHAR (100) NOT NULL,
+    [TYPE]   INT            NOT NULL,
+    [GRP]    INT            NOT NULL,
+    [LNG]    INT            NOT NULL,
+    PRIMARY KEY CLUSTERED ([CODE] ASC)
+);
+
+CREATE TABLE [dbo].[ImageFP] (
+    [SERIAL]  INT   NOT NULL,
+    [SERPERS] INT   NOT NULL,
+    [fpright] IMAGE NULL,
+    [fpleft]  IMAGE NULL,
+    PRIMARY KEY CLUSTERED ([SERIAL] ASC, [SERPERS] ASC)
+);
+
+CREATE TABLE [dbo].[ImageFace] (
+    [SERIAL]    INT   NOT NULL,
+    [SERPERS]   INT   NOT NULL,
+    [faceright] IMAGE NULL,
+    [facefront] IMAGE NULL,
+    [faceleft]  IMAGE NULL,
+    PRIMARY KEY CLUSTERED ([SERIAL] ASC, [SERPERS] ASC)
+);
+
+CREATE TABLE [dbo].[ImageAndFP] (
+    [serial]    INT   NOT NULL,
+    [serpers]   INT   NOT NULL,
+    [faceright] IMAGE NULL,
+    [facefront] IMAGE NULL,
+    [faceleft]  IMAGE NULL,
+    [fpright]   IMAGE NULL,
+    [fpleft]    IMAGE NULL,
+    PRIMARY KEY CLUSTERED ([serial] ASC, [serpers] ASC)
+);
+
